@@ -1,0 +1,41 @@
+.checklist{
+    position: relative;
+    text-align: start;
+  }
+  .checklist h4{
+    margin: 5% 5% 0.5% 5%;
+  }
+  .deleteChecklist{
+    position: absolute;
+    top:0;
+    right:10px;
+  }
+  .addChecklist{
+    margin: 1% 5% 1% 5%;
+  }
+  button{
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 32px;
+    margin: 8px;
+    max-width: 300px;
+    overflow: hidden;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    transition-property: background-color,border-color,box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+}
+input{
+  padding: 6px 8px;
+  border-radius: 4px;
+}

@@ -1,0 +1,8 @@
+<h3>card</h3>
+<div>
+  <input placeholder="Add new checklist" class='newChecklist'><button (click)='addChecklist($event)'>add</button></div>
+<div *ngFor="let CardDetails of cardDetails" class='checklist'>
+  <h4>{{CardDetails.name}}</h4>
+  <button class="deleteChecklist" (click)='deleteCheckList(CardDetails.id)'>delete</button>
+  <app-checkItems [checkItems]='CardDetails.checkItems' [cardId]='cardId' [checklistId]='CardDetails.id'></app-checkItems>
+</div>

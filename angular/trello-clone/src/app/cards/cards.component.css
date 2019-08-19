@@ -1,0 +1,78 @@
+.card{
+    background-color: white;
+    /* width: 90%; */
+    margin: 5%;
+    border-radius: 4px;
+    /* overflow: scroll; */
+    padding: 6px 8px 2px;
+    position: relative;
+    /* z-index: 10; */
+}
+
+.cards{
+    max-height: 350px;
+    overflow-y: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  /* ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  } */
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {  
+  background: rgb(199, 199, 199); 
+  border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .cardaddBefore > .btn{
+    display: none;
+  }
+  .cardaddBefore input{
+    background-color: rgba(0,0,0,.001); 
+    transition: color 85ms ease-in;  margin: 5px;
+    border-radius: 4px;
+    text-align: center;
+    border: 0ch;
+    height: 30px;
+  }
+
+  .cardaddAfter > .btn{
+    display: block;
+    position: relative;
+  }
+  .addBtn{
+    background-color: #5aac44;
+    box-shadow: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 8px 4px 8px 4px;
+    padding: 6px 12px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .closeBtn{
+    border: none;
+    font-size: 35px;
+    position: absolute;
+    content: normal;
+    bottom: 4px;
+
+  }
+ 
+  input{
+    padding: 6px 8px;
+    border-radius: 4px;
+}

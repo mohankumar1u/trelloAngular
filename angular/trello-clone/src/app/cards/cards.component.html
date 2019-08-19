@@ -1,0 +1,12 @@
+<div class='cards'>
+  <div *ngFor="let card of cards" class='card' (click)='list($event,card.id)'>
+    {{card.name}}
+  </div>
+</div>
+<div [ngClass]="cardStatus? 'cardaddBefore':'cardaddAfter'">
+  <input placeholder="+Add new card" (click)="card()">
+  <div class="btn">
+    <button class='addBtn'(click)='addCard($event)'>add card</button>
+    <button class='closeBtn'(click)='addClose()'>×</button>
+  </div>
+</div>
