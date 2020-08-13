@@ -2,7 +2,7 @@
   <div *ngFor="let board of boards " class='board'>
     <div>{{board.name}}</div>
 
-    <app-cards [id]='board.id' (CardDetails)="popup($event)"></app-cards>
+    <app-cards [id]='board.id' (CardDetails)="popup($event,board.id)"></app-cards>
   </div>
   <div [ngClass]="status? 'beforeClickEdit':'afterClickEdit'">
     <input placeholder="+Add new list" class="add-list" (click)="cards($event)">
@@ -11,5 +11,6 @@
   <div [ngClass]="displayPopup?'afterCardClick':'beforeCardClick'" (click)='popupClose($event)'>
     <div class='CardDetails'>
       <app-cardDetails [cardId]='cardId'[cardDetails] ='cardDetails'></app-cardDetails>
+      <button class='ArchiveCard' (click)='ArchiveCard(cardId,cardDetails)' >Archive</button>
     </div>
   </div>

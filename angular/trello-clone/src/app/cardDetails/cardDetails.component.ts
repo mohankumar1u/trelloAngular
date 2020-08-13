@@ -16,6 +16,7 @@ export class CardDetailsComponent implements OnInit {
   }
   addChecklist=(e)=>{
     this.name=e.target.parentElement.querySelector('input').value
+    e.target.parentElement.querySelector('input').value=""
     this.CardDetailsService.addChecklist(this.name,this.cardId).subscribe(checklist=>{ this.cardDetails.push(checklist)});
   }
   deleteCheckList=(id)=>{

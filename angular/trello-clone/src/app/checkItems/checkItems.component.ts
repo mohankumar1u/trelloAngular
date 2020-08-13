@@ -42,8 +42,7 @@ export class CheckItemsComponent implements OnInit {
       this.current[0].state='complete'
     }
     this.checkItemService.checkItemState(this.current[0].id, this.state, this.cardId).subscribe(
-      this.checkItems=this.checkItems.filter(item=>item.id!==checkItem.id),
-      this.checkItems.push(this.current[0])
+
     )
   }
 

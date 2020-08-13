@@ -16,7 +16,10 @@ export class BoardComponent implements OnInit {
  displayPopup:boolean=false;
  listName:string;
  cardId:string;
-  constructor(private boardService: boardService, private renderer:Renderer2) { }
+ popupboardId: any;
+  constructor(private boardService: boardService, private renderer:Renderer2
+    //, private cardService: cardService
+    ) { }
 
   ngOnInit() {
     this.getList()
@@ -36,11 +39,13 @@ export class BoardComponent implements OnInit {
   }
   addList=(e)=>{
     this.listName=e.target.parentElement.parentElement.querySelector('input').value
+    e.target.parentElement.parentElement.querySelector('input').value=""
     this.boardService.addlist( this.listName)
     .subscribe(board=>{ this.boards.push(board)})
   }
-  popup=(id)=>{
+  popup=(id,boardId)=>{
   //  console.log(id)
+  this.popupboardId=boardId
   this.cardId=id
    this.boardService.getCardDetails(this.cardId).subscribe(cardDetails=>{
     this.cardDetails=cardDetails;
@@ -58,6 +63,17 @@ export class BoardComponent implements OnInit {
     return;
     }
     
+  }
+  ArchiveCard=(cardId,cardDetails)=>{
+    this.boardService.deleteCard(cardId).subscribe(obj=>{
+      this.boardService.getList()
+      .subscribe(board =>{ console.log(board)
+    this.boards = [...board]
+      });
+      this.displayPopup=!this.displayPopup
+      console.log(this.boards,cardDetails )
+    })
+    console.log(cardId)
   }
  
 }

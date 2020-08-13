@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("./Mountains-4K-Ultra-HD-Wallpaper-3840x2160.jpg");
+    background-repeat:no-repeat;
+    background-size: cover; 
+    margin: 0;
+}

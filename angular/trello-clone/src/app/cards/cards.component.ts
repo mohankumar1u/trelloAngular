@@ -21,6 +21,12 @@ export class CardsComponent implements OnInit {
     this.getCards()
     // console.log(this.cards)
   }
+  cardsReset=(id)=>{
+    this.cardService.getCards(id)
+    .subscribe(card =>{ console.log(card)
+  this.cards = [...card]
+    });
+  }
   getCards=()=>{
     this.cardService.getCards(this.id)
     .subscribe(card =>{ console.log(card)
@@ -39,6 +45,7 @@ export class CardsComponent implements OnInit {
   }
   addCard=(e)=>{
     this.cardName=e.target.parentElement.parentElement.querySelector('input').value
+    e.target.parentElement.parentElement.querySelector('input').value=""
     this.cardService.addCard(this.id,this.cardName)
     .subscribe(card=>{ this.cards.push(card)});
   }
